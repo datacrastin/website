@@ -1348,3 +1348,43 @@ footer {
         font-size: 1rem;
     }
 }
+
+/* Base navbar button styles (PC version) */
+.nav-right .btn-primary,
+.nav-right .btn-secondary {
+    padding: 6px 12px;
+    font-size: 0.813rem;
+    border-radius: 6px;
+    min-height: unset;
+    line-height: 1.2;
+}
+
+.nav-right {
+    gap: 8px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .nav-right .btn-primary,
+    .nav-right .btn-secondary {
+        padding: 4px 10px;
+        font-size: 0.75rem;
+    }
+
+    .navbar .container {
+        height: 56px;
+        padding: 0 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-right .btn-primary,
+    .nav-right .btn-secondary {
+        padding: 3px 8px;
+        font-size: 0.688rem;
+    }
+
+    .navbar .container {
+        height: 48px;
+    }
+}
