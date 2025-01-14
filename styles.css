@@ -129,7 +129,7 @@ body {
 }
 
 .btn-outline {
-    border: 2px solid var(--gray-200);
+    border: 2px solid var(--primary-transparent-50);
     color: var(--black);
 }
 
@@ -867,6 +867,16 @@ body {
     right: 10%;
 }
 
+.threat:nth-child(4) {
+    top: 30%;
+    left: 80%;
+}
+
+.threat:nth-child(5) {
+    top: 60%;
+    left: 15%;
+}
+
 .threat svg {
     width: 16px;
     height: 16px;
@@ -1387,4 +1397,191 @@ footer {
     .navbar .container {
         height: 48px;
     }
+}
+
+/* Update threat positions */
+.threat:nth-child(4) {
+    top: 30%;
+    left: 80%;
+}
+
+.threat:nth-child(5) {
+    top: 60%;
+    left: 15%;
+}
+
+/* Adjust animation timing for smoother flow */
+.threat {
+    animation-delay: var(--delay, 0s);
+}
+
+.threat:nth-child(1) { --delay: 0s; }
+.threat:nth-child(2) { --delay: 0.4s; }
+.threat:nth-child(3) { --delay: 0.8s; }
+.threat:nth-child(4) { --delay: 1.2s; }
+.threat:nth-child(5) { --delay: 1.6s; }
+
+/* Simplified Footer Link Animations */
+.footer-links a {
+    color: var(--gray-600);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.footer-links a:hover {
+    color: var(--primary);
+    transform: translateX(2px);
+}
+
+/* Remove all the complex animations */
+.footer-links a::after {
+    display: none;
+}
+
+.footer-links a:focus {
+    outline: none;
+}
+
+/* Custom text selection color */
+::selection {
+    background: var(--primary-transparent-50);
+    color: var(--black);
+}
+
+/* For Firefox */
+::-moz-selection {
+    background: var(--primary-transparent-50);
+    color: var(--black);
+}
+
+/* Terminal Styles */
+.terminal-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    z-index: 3;
+    position: relative;
+}
+
+.terminal {
+    background: #1E1E1E;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.terminal-header {
+    background: #2D2D2D;
+    padding: 12px;
+    display: flex;
+    gap: 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.terminal-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #FF5F56;
+}
+
+.terminal-dot:nth-child(2) {
+    background: #FFBD2E;
+}
+
+.terminal-dot:nth-child(3) {
+    background: #27C93F;
+}
+
+.terminal-content {
+    padding: 16px;
+    font-family: 'Menlo', 'Monaco', 'Courier New', monospace;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.terminal-line {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    margin-bottom: 8px;
+    color: #fff;
+    opacity: 0;
+    animation: fadeIn 0.3s ease forwards;
+}
+
+.terminal-prompt {
+    color: var(--primary);
+    min-width: 20px;
+}
+
+.terminal-time {
+    color: #666;
+    min-width: 90px;
+}
+
+.terminal-text {
+    color: #fff;
+}
+
+.terminal-text.warning {
+    color: #FFBD2E;
+}
+
+.terminal-text.success {
+    color: #27C93F;
+}
+
+/* Animation for terminal lines */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.terminal-line:nth-child(1) { animation-delay: 0.1s; }
+.terminal-line:nth-child(2) { animation-delay: 0.2s; }
+.terminal-line:nth-child(3) { animation-delay: 0.3s; }
+.terminal-line:nth-child(4) { animation-delay: 0.4s; }
+.terminal-line:nth-child(5) { animation-delay: 0.5s; }
+
+/* Blinking cursor */
+.terminal-line:last-child::after {
+    content: '▋';
+    animation: blink 1s step-end infinite;
+    margin-left: 4px;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+/* Terminal specific styles */
+.terminal.logs .terminal-content {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+/* Scrollbar styling */
+.terminal-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.terminal-content::-webkit-scrollbar-track {
+    background: #2D2D2D;
+}
+
+.terminal-content::-webkit-scrollbar-thumb {
+    background: #666;
+    border-radius: 3px;
 }
