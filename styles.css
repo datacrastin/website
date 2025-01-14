@@ -1316,26 +1316,28 @@ footer {
     .nav-right .btn-secondary {
         padding: 8px 16px;
         font-size: 0.875rem;
+        border-radius: 6px;
     }
 
     .navbar .container {
         height: 64px;
-    }
-
-    .logo {
-        font-size: 1.125rem;
+        padding: 0 16px;
     }
 
     .nav-right {
         gap: 8px;
+    }
+
+    .logo {
+        font-size: 1.125rem;
     }
 }
 
 @media (max-width: 480px) {
     .nav-right .btn-primary,
     .nav-right .btn-secondary {
-        padding: 6px 12px;
-        font-size: 0.813rem;
+        padding: 4px 10px;
+        font-size: 0.75rem;
     }
 
     .navbar .container {
