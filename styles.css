@@ -38,20 +38,20 @@ body {
 
 /* Navigation */
 .navbar {
+    background: white;
+    border-bottom: 1px solid var(--gray-200);
+    padding: 12px 0;
     position: sticky;
     top: 0;
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(226, 232, 240, 0.8);
     z-index: 1000;
+    backdrop-filter: blur(8px);
 }
 
 .navbar .container {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    height: 80px;
+    justify-content: space-between;
+    height: 48px;
 }
 
 .nav-left {
@@ -61,14 +61,19 @@ body {
 }
 
 .logo {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
     font-size: 1.25rem;
-    font-weight: 700;
+    font-weight: 600;
     color: var(--black);
     text-decoration: none;
-    transition: opacity 0.2s;
+    display: flex;
+    align-items: center;
+    line-height: 1;
+}
+
+.logo svg {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
 }
 
 .logo:hover {
@@ -77,14 +82,16 @@ body {
 
 .nav-links {
     display: flex;
-    gap: 2rem;
+    gap: 32px;
+    align-items: center;
 }
 
 .nav-links a {
     color: var(--gray-700);
     text-decoration: none;
+    font-size: 0.938rem;
     font-weight: 500;
-    transition: color 0.2s;
+    transition: color 0.2s ease;
 }
 
 .nav-links a:hover {
@@ -93,7 +100,8 @@ body {
 
 .nav-right {
     display: flex;
-    gap: 1rem;
+    gap: 12px;
+    align-items: center;
 }
 
 /* Buttons */
@@ -1362,15 +1370,34 @@ footer {
 /* Base navbar button styles (PC version) */
 .nav-right .btn-primary,
 .nav-right .btn-secondary {
-    padding: 6px 12px;
-    font-size: 0.813rem;
+    padding: 6px 14px;
+    font-size: 0.875rem;
+    font-weight: 500;
     border-radius: 6px;
-    min-height: unset;
-    line-height: 1.2;
+    transition: all 0.2s ease;
 }
 
-.nav-right {
-    gap: 8px;
+.nav-right .btn-primary {
+    background: var(--primary);
+    color: white;
+    border: 1px solid var(--primary);
+}
+
+.nav-right .btn-secondary {
+    background: transparent;
+    color: var(--gray-700);
+    border: 1px solid var(--gray-200);
+}
+
+.nav-right .btn-primary:hover {
+    background: var(--primary-dark);
+    transform: translateY(-1px);
+}
+
+.nav-right .btn-secondary:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    transform: translateY(-1px);
 }
 
 /* Mobile adjustments */
@@ -1378,7 +1405,7 @@ footer {
     .nav-right .btn-primary,
     .nav-right .btn-secondary {
         padding: 4px 10px;
-        font-size: 0.75rem;
+        font-size: 0.813rem;
     }
 
     .navbar .container {
