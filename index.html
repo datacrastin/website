@@ -282,50 +282,55 @@
                             <div class="stat-label">Active Protection</div>
                         </div>
                     </div>
-                    <div class="security-diagram">
-                        <div class="diagram-content">
-                            <!-- Protected Server -->
-                            <div class="diagram-server protected">
-                                <svg viewBox="0 0 24 24" fill="none">
-                                    <path d="M21 9V15C21 18 19 20 16 20H8C5 20 3 18 3 15V9C3 6 5 4 8 4H16C19 4 21 6 21 9Z" stroke="currentColor" stroke-width="2"/>
-                                    <path d="M12 8V16M8 12H16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                                </svg>
-                                <span>Protected Server</span>
+                    <div class="terminal-container">
+                        <div class="terminal">
+                            <div class="terminal-header">
+                                <span class="terminal-dot"></span>
+                                <span class="terminal-dot"></span>
+                                <span class="terminal-dot"></span>
                             </div>
-
-                            <!-- Security Layers -->
-                            <div class="security-layers">
-                                <div class="layer layer-1">
-                                    <span class="layer-label"></span>
+                            <div class="terminal-content">
+                                <div class="terminal-line">
+                                    <span class="terminal-prompt">$</span>
+                                    <span class="terminal-text">Starting Datacrastin protection...</span>
                                 </div>
-                                <div class="layer layer-2">
-                                    <span class="layer-label"></span>
+                                <div class="terminal-line">
+                                    <span class="terminal-prompt">></span>
+                                    <span class="terminal-text">Web Server started on port 443 (Protected)</span>
                                 </div>
-                                <div class="layer layer-3">
-                                    <span class="layer-label"></span>
+                                <div class="terminal-line success">
+                                    <span class="terminal-prompt">✓</span>
+                                    <span class="terminal-text">Protection layer activated</span>
                                 </div>
                             </div>
-
-                            <!-- Threat Icons -->
-                            <div class="threat-icons">
-                                <div class="threat">
-                                    <svg viewBox="0 0 24 24" fill="none">
-                                        <path d="M12 2L3 7V17L12 22L21 17V7L12 2Z" stroke="currentColor" stroke-width="2"/>
-                                        <path d="M12 8V16M8 12H16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                                    </svg>
+                        </div>
+                        
+                        <div class="terminal logs">
+                            <div class="terminal-header">
+                                <span class="terminal-dot"></span>
+                                <span class="terminal-dot"></span>
+                                <span class="terminal-dot"></span>
+                            </div>
+                            <div class="terminal-content">
+                                <div class="terminal-line">
+                                    <span class="terminal-time">[10:42:15]</span>
+                                    <span class="terminal-text warning">DDoS attack detected (192.168.1.x)</span>
                                 </div>
-                                <div class="threat">
-                                    <svg viewBox="0 0 24 24" fill="none">
-                                        <path d="M19 4H5C3.89543 4 3 4.89543 3 6V20C3 21.1046 3.89543 22 5 22H19C20.1046 22 21 21.1046 21 20V6C21 4.89543 20.1046 4 19 4Z" stroke="currentColor" stroke-width="2"/>
-                                        <path d="M8 2V6M16 2V6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                                        <path d="M12 10L16 14M16 10L12 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                                    </svg>
+                                <div class="terminal-line">
+                                    <span class="terminal-time">[10:42:16]</span>
+                                    <span class="terminal-text success">Attack mitigated - 150k requests blocked</span>
                                 </div>
-                                <div class="threat">
-                                    <svg viewBox="0 0 24 24" fill="none">
-                                        <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2"/>
-                                        <path d="M12 8V12M12 16H12.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                                    </svg>
+                                <div class="terminal-line">
+                                    <span class="terminal-time">[10:42:18]</span>
+                                    <span class="terminal-text">Applying security rules...</span>
+                                </div>
+                                <div class="terminal-line">
+                                    <span class="terminal-time">[10:42:19]</span>
+                                    <span class="terminal-text">Generating analytics report</span>
+                                </div>
+                                <div class="terminal-line">
+                                    <span class="terminal-time">[10:42:20]</span>
+                                    <span class="terminal-text success">All systems operational</span>
                                 </div>
                             </div>
                         </div>
