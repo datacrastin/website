@@ -169,7 +169,7 @@ const createParticleBackground = () => {
         }
 
         draw() {
-            ctx.fillStyle = 'rgba(252, 88, 104, 0.1)';
+            ctx.fillStyle = 'rgba(104, 68, 228, 0.1)';
             ctx.beginPath();
             ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
             ctx.fill();
@@ -228,7 +228,7 @@ document.addEventListener('DOMContentLoaded', () => {
             left: var(--mouse-x, 0);
             width: 300px;
             height: 300px;
-            background: radial-gradient(circle, rgba(252, 88, 104, 0.1) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(104, 68, 228, 0.1) 0%, transparent 70%);
             transform: translate(-50%, -50%);
             pointer-events: none;
             opacity: 0;
