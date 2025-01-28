@@ -941,6 +941,10 @@ body {
 }
 
 @media (max-width: 768px) {
+    .security-visual .security-stats {
+        display: none;
+    }
+
     .security-stats {
         grid-template-columns: 1fr;
     }
@@ -1807,5 +1811,436 @@ input:checked + .slider:before {
 
     .pricing-card {
         padding: 32px 24px;
+    }
+}
+
+.network-section {
+    padding: 120px 0;
+    background: linear-gradient(180deg, #f8f9ff 0%, #ffffff 100%);
+    overflow: hidden;
+}
+
+.network-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.network-content {
+    padding-right: 40px;
+}
+
+.section-badge {
+    display: inline-block;
+    padding: 8px 16px;
+    background: rgba(104, 68, 228, 0.1);
+    color: #6844e4;
+    border-radius: 100px;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 24px;
+}
+
+.network-content h2 {
+    font-size: 48px;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    color: #1a1f36;
+}
+
+.section-subtitle {
+    font-size: 18px;
+    color: #64748b;
+    margin-bottom: 48px;
+}
+
+.network-metrics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 48px;
+}
+
+.metric-card {
+    background: white;
+    padding: 32px 24px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.metric-card:hover {
+    transform: translateY(-5px);
+}
+
+.metric-value {
+    font-size: 36px;
+    font-weight: 700;
+    color: #6844e4;
+    margin-bottom: 8px;
+}
+
+.metric-value span {
+    font-size: 20px;
+    margin-left: 4px;
+}
+
+.metric-label {
+    color: #64748b;
+    font-size: 14px;
+}
+
+.globe-wrapper {
+    position: relative;
+    height: 700px;
+    perspective: 1000px;
+}
+
+.globe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: linear-gradient(
+        135deg,
+        rgba(26, 31, 54, 0.95),
+        rgba(15, 18, 37, 0.95)
+    );
+    box-shadow: 
+        inset 0 0 60px rgba(104, 68, 228, 0.3),
+        inset 0 0 100px rgba(104, 68, 228, 0.2),
+        0 0 120px rgba(104, 68, 228, 0.15);
+    overflow: hidden;
+    transform-style: preserve-3d;
+    animation: globeFloat 6s ease-in-out infinite;
+}
+
+.globe-gradient {
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    background: radial-gradient(
+        circle at 30% 30%,
+        rgba(104, 68, 228, 0.15),
+        transparent 70%
+    );
+    animation: rotateGradient 30s linear infinite;
+}
+
+.globe-grid {
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    background-image: 
+        linear-gradient(90deg, rgba(104, 68, 228, 0.1) 1px, transparent 1px),
+        linear-gradient(rgba(104, 68, 228, 0.1) 1px, transparent 1px);
+    background-size: 40px 40px;
+    animation: rotateGrid 20s linear infinite;
+}
+
+.points {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation: rotatePoints 30s linear infinite;
+}
+
+.point {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+}
+
+.point-pulse {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #6844e4;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(104, 68, 228, 0.6);
+}
+
+.point-pulse::before,
+.point-pulse::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    border-radius: inherit;
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.point-pulse::after {
+    animation-delay: 0.5s;
+}
+
+.connection-line {
+    position: absolute;
+    width: 100px;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(104, 68, 228, 0.5), transparent);
+    transform-origin: left center;
+}
+
+.stats-cards {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
+    z-index: 10;
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 16px 24px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    box-shadow: 
+        0 4px 6px -1px rgba(0, 0, 0, 0.1),
+        0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.stat-dot {
+    width: 10px;
+    height: 10px;
+    background: #22C55E;
+    border-radius: 50%;
+    display: block;
+    animation: blink 1.5s ease-in-out infinite;
+}
+
+.stat-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-value {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1a1f36;
+}
+
+.stat-label {
+    font-size: 14px;
+    color: #64748b;
+}
+
+.stat-trend {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: #22C55E;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+@keyframes globeFloat {
+    0%, 100% { transform: translate(-50%, -50%) rotate3d(1, 1, 1, 0deg); }
+    50% { transform: translate(-50%, -52%) rotate3d(1, 1, 1, 2deg); }
+}
+
+@keyframes rotateGradient {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes rotateGrid {
+    from { transform: rotate(360deg); }
+    to { transform: rotate(0deg); }
+}
+
+@keyframes rotatePoints {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0.8; }
+    100% { transform: scale(3); opacity: 0; }
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+}
+
+/* Point Positions */
+.point1 { top: 30%; left: 20%; }
+.point2 { top: 45%; left: 48%; }
+.point3 { top: 25%; left: 80%; }
+.point4 { top: 65%; left: 65%; }
+.point5 { top: 75%; left: 30%; }
+
+/* Connection Line Rotations */
+.point1 .connection-line { transform: rotate(45deg); }
+.point2 .connection-line { transform: rotate(-15deg); }
+.point3 .connection-line { transform: rotate(-45deg); }
+.point4 .connection-line { transform: rotate(15deg); }
+.point5 .connection-line { transform: rotate(60deg); }
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .globe {
+        width: 400px;
+        height: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .globe-wrapper {
+        height: 600px;
+    }
+
+    .globe {
+        width: 300px;
+        height: 300px;
+    }
+
+    .stats-cards {
+        flex-direction: column;
+        bottom: -40px;
+    }
+
+    .stat-card {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .globe {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+/* Updated Mobile Responsive Styles */
+@media (max-width: 1200px) {
+    .network-grid {
+        gap: 40px;
+    }
+
+    .globe {
+        width: 400px;
+        height: 400px;
+    }
+
+    .network-content h2 {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 992px) {
+    .network-section {
+        padding: 60px 0 120px;
+    }
+
+    .network-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .network-content {
+        padding-right: 0;
+        text-align: center;
+        order: 1;
+    }
+
+    .globe-wrapper {
+        height: 500px;
+        margin-top: 40px;
+        order: 2;
+        margin-bottom: 120px;
+    }
+
+    .stats-cards {
+        bottom: -100px;
+    }
+
+    .network-metrics {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 600px;
+        margin: 40px auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .network-section {
+        padding: 40px 0 60px;
+    }
+
+    .globe-wrapper {
+        height: 400px;
+        margin-bottom: 140px;
+    }
+
+    .stats-cards {
+        bottom: -120px;
+        width: 90%;
+        max-width: 320px;
+        gap: 12px;
+    }
+}
+
+/* Fix for very small screens */
+@media (max-width: 360px) {
+    .globe {
+        width: 220px;
+        height: 220px;
+    }
+
+    .stats-cards {
+        width: 95%;
+    }
+
+    .stat-card {
+        padding: 10px 12px;
+    }
+}
+
+/* Fix for landscape mode */
+@media (max-height: 600px) and (orientation: landscape) {
+    .network-section {
+        padding: 30px 0 140px;
+    }
+
+    .globe-wrapper {
+        height: 300px;
+    }
+
+    .globe {
+        width: 250px;
+        height: 250px;
+    }
+
+    .stats-cards {
+        bottom: -100px;
     }
 }
